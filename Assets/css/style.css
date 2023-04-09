@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 75%;
+}
+
+.hide {
+    display: none;
+}
