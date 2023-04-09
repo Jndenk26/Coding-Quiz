@@ -1,9 +1,16 @@
 var containerQuestionEl = document.getElementById("question-container");
-
-
-
-
-
+var startButtonEl = document.getElementById("start")
+var timerEl = document.getElementById("timer")
+var time = 60
+var titleEl = document.getElementById("title")
+var instructionsEl = document.getElementById("instructions")
+var hideEl = document.getElementById("hide")
+var questionDescriptionEl = document.getElementById("question-description")
+var questionEl = document.getElementById("question")
+var question1El = document.getElementById("question-1")
+var question2El = document.getElementById("question-2")
+var question3El = document.getElementById("question-3")
+var question4El = document.getElementById("question-4")
 
 var questions = [
 {
@@ -43,3 +50,26 @@ var questions = [
 },
 ];
 
+function countDown () {
+    time--;
+    timerEl.textContent = time
+    if (time <= 0) {
+        clearInterval(interval);
+        timerEl.textContent = "Time's up!";
+    }
+
+
+}
+
+function handleClick() {
+    var interval = setInterval(countDown, 1000)
+    startButtonEl.style.display = "none"
+    instructionsEl.style.display = "none"
+    titleEl.style.display = "none"
+
+}
+start.addEventListener("click", handleClick);
+
+// add the text that is needed for each button
+
+// create a function that displays the questions and options
